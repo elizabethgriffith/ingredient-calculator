@@ -1,0 +1,51 @@
+html { 
+  background: url(images/bananas.jpg) no-repeat center center fixed; 
+  background-size: cover;
+}
+
+h2 {
+  margin: 0;
+}
+
+.loading {
+  display: none;
+}
+
+.mainSection {
+  background: rgba(255, 255, 255, 0.8);
+  max-width: 55%;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+.right {
+  float: right;
+  max-width: 40%;
+  padding: 10px;
+}
+
+.left {
+  max-height: 10%;
+}
+
+.flexContent {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  align-items: flex-start;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+}
+
+
+
+ol {
+  list-style: none;
+}
+
+.step {
+  font-weight: bold;
+}

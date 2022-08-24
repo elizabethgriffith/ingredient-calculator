@@ -4,56 +4,61 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" src="style.css">
+  <link rel="stylesheet" href="style.css">
   <title>Ingredient Calculator</title>
 </head>
 <body>
   <h1>Smoothie Ingredient Serving Size Calculator</h1>
-  <section class="userInput">
-    <h2>Serving Size</h2>
-    <form>
-      <span># of Servings</span>
-      <input type="number" id="servingSize" placeholder="1">
-      <input type="submit" value="calculate">
-    </form>
+  <section class="flexContent">
+    <section class="mainSection left">
+      <h2>Serving Size</h2>
+      <form>
+        <span># of Servings</span>
+        <input type="number" id="servingSize" placeholder="1">
+        <input type="submit" value="calculate">
+      </form>
+    </section>
+    <section class="mainSection">
+      <div class="loading">
+        <img src="images/loading.gif" alt="calculating">
+      </div>
+      <img src="images/smoothie.jpg" class="right" alt="strawberry banana smoothie">
+      <h2>Strawberry Banana Smoothie</h2>
+      <p>Just a few ingredients and about 5 minutes, that’s all you need to make these delicious smoothies from scratch!</p>
+      <section class="ingredients">
+        <h3>Ingredients:</h3>
+        <ul>
+          <li><span id="bananas"></span>g of sliced bananas</li>
+          <li><span id="strawberries"></span>g of frozen strawberries</li>
+          <li><span id="yogurt"></span>g plain greek yogurt</li>
+          <li><span id="milk"></span>g low fat milk</li>
+          <li><span id="honey"></span>g honey</li>
+          <li><span id="vanilla"></span>g vanilla extract</li>
+        </ul>
+      </section>
+      <section class="instructions">
+        <h3>Let's get to blending!</h3>
+        <ol>
+          <li><span class="step">Step 1: </span>Add greek yogurt, milk, honey, and vanilla extract to the blender and blend until combined.</li>
+          <li><span class="step">Step 2: </span>Slowly add bananas to the blended mixture and blend until creamy.</li>
+          <li><span class="step">Step 3: </span> Add strawberries and blend until smooth.</li>
+          <li><span class="step">Step 4: </span>Pour into serving glasses.</li>
+        </ol>
+        <p>Optional: Garnish with mint leaves or cinnamon.</p>
+      </section>
+      <section class="nutrition">
+        <h4>Nutrition Information:</h4>
+        <ul>
+          <li>calories: <span id="calories"></span> kcal</li>
+          <li>carbohydrates: <span id="carbs"></span> g</li>
+          <li>protein: <span id="calcium"></span> g</li>
+          <li>sugar: <span id="sugar"></span> g</li>
+          <li>calcium: <span id="calcium"></span> mg</li>
+        </ul>
+      </section>
+    </section>
   </section>
-  <section class="recipe">
-    <img src="images/loading.gif" alt="calculating">
-    <h2>Strawberry Banana Smoothie</h2>
-    <p>Just a few ingredients and about 5 minutes, that’s all you need to make these delicious smoothies from scratch!</p>
-    <section class="ingredients">
-      <h3>Ingredients:</h3>
-      <ul>
-        <li><span id="bananas"></span>g of sliced bananas</li>
-        <li><span id="strawberries"></span>g of frozen strawberries</li>
-        <li><span id="yogurt"></span>g plain greek yogurt</li>
-        <li><span id="milk"></span>g low fat milk</li>
-        <li><span id="honey"></span>g honey</li>
-        <li><span id="vanilla"></span>g vanilla extract</li>
-      </ul>
-    </section>
-    <section class="instructions">
-      <h3>Let's get to blending!</h3>
-      <ol>
-        <li>Step 1: Add greek yogurt, milk, honey, and vanilla extract to the blender and blend until combined.</li>
-        <li>Step 2: Slowly add bananas to the blended mixture and blend until creamy.</li>
-        <li>Step 3: Add strawberries and blend until smooth.</li>
-        <li>Step 4: Pour into serving glasses.</li>
-      </ol>
-      <p>Optional: Garnish with mint leaves or cinnamon.</p>
-    </section>
-    <section class="nutrition">
-      <h4>Nutrition Information:</h4>
-      <ul>
-        <li>calories: <span id="calories"></span> kcal</li>
-        <li>carbohydrates: <span id="carbs"></span> g</li>
-        <li>protein: <span id="calcium"></span> g</li>
-        <li>sugar: <span id="sugar"></span> g</li>
-        <li>calcium: <span id="calcium"></span> mg</li>
-      </ul>
-    </section>
-    
-  </section>
+  
 
   <script src="app.js"></script>
 </body>
