@@ -12,22 +12,82 @@ const protein = document.querySelector('#protein')
 const sugar = document.querySelector('#sugar')
 
 
-// Default Values: 1 serving size
-document.addEventListener('DOMContentLoaded', initialValues)
+let bananaVal
+let strawberryVal
+let yogurtVal
+let milkVal
+let honeyVal
+let vanillaVal
+let calVal
+let carbVal
+let calciumVal
+let proteinVal
+let sugarVal
 
-function initialValues(){
-  bananas.appendChild(document.createTextNode('240'))
-  strawberries.appendChild(document.createTextNode('220'))
-  yogurt.appendChild(document.createTextNode('285'))
-  milk.appendChild(document.createTextNode('120'))
-  honey.appendChild(document.createTextNode('20'))
-  vanilla.appendChild(document.createTextNode('2'))
 
-  calories.appendChild(document.createTextNode('260'))
-  carbs.appendChild(document.createTextNode('50'))
-  calcium.appendChild(document.createTextNode('204'))
-  protein.appendChild(document.createTextNode('14'))
-  sugar.appendChild(document.createTextNode('34'))
+// Listen for submit
+document.getElementById('servingSizeForm').addEventListener('submit', loadingGIF)
+
+// use loadingGIF for UI
+function loadingGIF(e){
+  // Hide Results + Show Loader
+  document.getElementById('loading').style.display = 'block'
+  document.getElementById('description').style.display = 'none'
+  document.getElementById('recipe').style.display = 'none'
+  
+  setTimeout(areValuesDefined, 1500)
+
+  e.preventDefault()
 
 }
 
+// determine if calculations have already ran
+function areValuesDefined(){
+  if (bananaVal === undefined){
+    calculateResults()
+  } else {
+    removeOldVals()
+  }
+}
+
+// remove the old text nodes to replace with new values
+function removeOldVals(){
+  bananaVal.parentNode.removeChild(bananaVal)
+  strawberryVal.parentNode.removeChild(strawberryVal)
+  yogurtVal.parentNode.removeChild(yogurtVal)
+  milkVal.parentNode.removeChild(milkVal)
+  honeyVal.parentNode.removeChild(honeyVal)
+  vanillaVal.parentNode.removeChild(vanillaVal)
+  calVal.parentNode.removeChild(calVal)
+  carbVal.parentNode.removeChild(carbVal)
+  calciumVal.parentNode.removeChild(calciumVal)
+  proteinVal.parentNode.removeChild(proteinVal)
+  sugarVal.parentNode.removeChild(sugarVal)
+
+  calculateResults()
+
+}
+
+// update quantities based on serving size
+function calculateResults(){
+  // Get serving size input
+  const serving = document.querySelector('#servingSize')
+  const servingSize = parseFloat(serving.value)
+  
+  bananaVal = bananas.appendChild(document.createTextNode(servingSize*240))
+  strawberryVal = strawberries.appendChild(document.createTextNode(servingSize*220))
+  yogurtVal = yogurt.appendChild(document.createTextNode(servingSize*285))
+  milkVal =milk.appendChild(document.createTextNode(servingSize*120))
+  honeyVal =honey.appendChild(document.createTextNode(servingSize*20))
+  vanillaVal = vanilla.appendChild(document.createTextNode(servingSize*2))
+
+  calVal = calories.appendChild(document.createTextNode(servingSize*260))
+  carbVal = carbs.appendChild(document.createTextNode(servingSize*50))
+  calciumVal = calcium.appendChild(document.createTextNode(servingSize*204))
+  proteinVal = protein.appendChild(document.createTextNode(servingSize*14))
+  sugarVal = sugar.appendChild(document.createTextNode(servingSize*34))
+
+  // Hide Loader + Show Results
+  document.getElementById('recipe').style.display = 'block'
+  document.getElementById('loading').style.display = 'none'
+}
